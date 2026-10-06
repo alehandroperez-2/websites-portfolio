@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Sora Table, a fictional neighbourhood restaurant portfolio concept by Mykola M.">
+  <link rel="icon" href="data:">
+  <title>Sora Table — Fictional Restaurant Concept</title>
+  <script type="module" src="/main.js"></script>
+</head>
+<body>
+  <div class="concept-banner" data-concept-banner>Portfolio concept <a href="https://mykolams.com/">by Mykola M</a></div>
+  <header class="hero" id="top">
+    <nav aria-label="Primary navigation"><a class="wordmark" href="#top">SORA / TABLE</a><div><a href="#menu">Menu</a><a href="#story">Story</a><a href="#visit">Visit</a></div><button type="button" data-dialog-open="reserve">Reserve</button></nav>
+    <div class="hero-copy"><p>Season led cooking · shared freely</p><h1>A table with<br><em>room to unfold.</em></h1><div><button type="button" data-dialog-open="reserve">Find a table</button><a href="#menu">Explore tonight's menu</a></div></div>
+    <p class="service">Dinner Tue to Sat · Fictional address, London</p>
+  </header>
+  <main>
+    <section class="marquee" aria-label="Restaurant principles"><span>SMALL FARMS</span><i>✦</i><span>OPEN FLAME</span><i>✦</i><span>GENEROUS PLATES</span><i>✦</i><span>NEIGHBOURHOOD NIGHTS</span></section>
+    <section class="menu" id="menu">
+      <header><div><p class="label">At the table</p><h2>Tonight’s menu</h2><p class="menu-intro">Four changing plates built for the middle of the table. Select a dish to find it on the menu.</p></div><div class="filters" role="tablist" aria-label="Filter menu"><button role="tab" aria-selected="true" data-tab="all" aria-controls="menu-list">Everything</button><button role="tab" aria-selected="false" data-tab="plant" aria-controls="menu-list">Plant led</button><button role="tab" aria-selected="false" data-tab="fire" aria-controls="menu-list">From the fire</button></div></header>
+      <section class="dish-carousel" aria-label="Featured dishes">
+        <div class="dish-carousel__top"><p><span id="dish-current">01</span> / 04 · Featured dishes</p><div><button type="button" data-dish-prev aria-label="Previous dishes">←</button><button type="button" data-dish-pause aria-pressed="false">Pause</button><button type="button" data-dish-next aria-label="Next dishes">→</button></div></div>
+        <div class="dish-carousel__viewport" tabindex="0">
+          <div class="dish-carousel__track">
+            <button type="button" class="dish-card" data-dish-card data-target="dish-leeks" data-kind="plant"><picture><source type="image/avif" srcset="/menu/leeks.avif"><img src="/menu/leeks.webp" alt="Charred leeks with cultured cream and hazelnuts"></picture><span><b>01</b> Charred leeks</span></button>
+            <button type="button" class="dish-card" data-dish-card data-target="dish-hake" data-kind="fire"><picture><source type="image/avif" srcset="/menu/hake.avif"><img src="/menu/hake.webp" alt="Hake over embered beans with saffron broth"></picture><span><b>02</b> Day boat hake</span></button>
+            <button type="button" class="dish-card" data-dish-card data-target="dish-squash" data-kind="plant"><picture><source type="image/avif" srcset="/menu/squash.avif"><img src="/menu/squash.webp" alt="Roasted squash with bitter leaves and barley"></picture><span><b>03</b> Roasted squash</span></button>
+            <button type="button" class="dish-card" data-dish-card data-target="dish-lamb" data-kind="fire"><picture><source type="image/avif" srcset="/menu/lamb.avif"><img src="/menu/lamb.webp" alt="Slow roasted lamb shoulder with mint and flatbread"></picture><span><b>04</b> Lamb shoulder</span></button>
+          </div>
+        </div>
+        <p class="sr-only" id="dish-status" aria-live="polite"></p>
+      </section>
+      <div class="menu-list" id="menu-list">
+        <article id="dish-leeks" data-kind="plant"><b>01</b><div><h3>Charred leeks, hazelnut and cultured cream</h3><p>Brown butter · sorrel · rye crumb</p></div><span>14</span></article>
+        <article id="dish-hake" data-kind="fire"><b>02</b><div><h3>Day boat hake over embered beans</h3><p>Saffron broth · preserved lemon</p></div><span>29</span></article>
+        <article id="dish-squash" data-kind="plant"><b>03</b><div><h3>Roasted squash, bitter leaves and barley</h3><p>Smoked apple · pumpkin seed</p></div><span>22</span></article>
+        <article id="dish-lamb" data-kind="fire"><b>04</b><div><h3>Slow lamb shoulder for two</h3><p>Fermented chilli · mint · flatbread</p></div><span>52</span></article>
+      </div>
+      <p class="fine">Illustrative menu and prices for this fictional concept only. Allergens would be confirmed by a real venue.</p>
+    </section>
+    <section class="story" id="story"><div class="monogram">S</div><div><p class="label">The idea</p><h2>Food that starts conversations, not ceremonies.</h2><p>Sora is imagined as a neighbourhood room where the menu changes often, plates land in the middle and hospitality stays uncomplicated.</p></div></section>
+    <section class="visit" id="visit"><div><p class="label">Visit</p><h2>Stay for another plate.</h2></div><dl><div><dt>Dinner</dt><dd>Tuesday to Saturday<br>17:30 to 23:00</dd></div><div><dt>Place</dt><dd>Fictional address<br>London, UK</dd></div><div><dt>Access</dt><dd>Step free entrance<br>Access needs welcomed</dd></div></dl><button type="button" data-dialog-open="reserve">Make a demo reservation</button></section>
+  </main>
+  <footer><a class="wordmark" href="#top">SORA / TABLE</a><p>Fictional concept. No reservation is submitted.</p><a href="https://mykolams.com/">Portfolio by Mykola M</a></footer>
+  <dialog id="reserve" aria-labelledby="reserve-title"><form class="modal" data-mock-form><button type="button" class="close" data-dialog-close aria-label="Close">×</button><p class="label">Reservation simulation</p><h2 id="reserve-title">Choose your table.</h2><div class="two"><label>Guests<select name="guests" required><option value="">Select</option><option>1 to 2</option><option>3 to 4</option><option>5 to 6</option></select></label><label>Evening<select name="evening" required><option value="">Select</option><option>Thursday</option><option>Friday</option><option>Saturday</option></select></label></div><label>Time<select name="time" required><option value="">Select</option><option>17:45</option><option>19:30</option><option>21:15</option></select></label><p>Demo only. No names, contact details or reservation data are collected.</p><button type="submit" class="book">Complete simulation</button><p class="demo-status" data-form-status aria-live="polite"></p></form></dialog>
+</body>
+</html>

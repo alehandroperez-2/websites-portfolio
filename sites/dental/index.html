@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Vela Dental Studio — a fictional responsive dental practice website concept by Mykola M." />
+  <link rel="icon" href="data:">
+  <title>Vela Dental Studio — Fictional Portfolio Concept</title>
+  <script type="module" src="/main.js"></script>
+</head>
+<body>
+  <div class="concept-banner" data-concept-banner>Portfolio concept <a href="https://mykolams.com/">by Mykola M</a></div>
+  <header class="hero" id="top">
+    <div class="hero-photo" role="img" aria-label="A dentist and patient discussing treatment in a bright clinic"></div>
+    <nav aria-label="Primary navigation">
+      <a class="brand" href="#top"><span>V</span> Vela Dental</a>
+      <div class="nav-links"><a href="#treatments">Treatments</a><a href="#team">Our team</a><a href="#faq">FAQ</a></div>
+      <button class="pill" data-dialog-open="booking">Request a visit</button>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow">Thoughtful dentistry in a calm setting</p>
+      <h1>Care you can understand.<br />Confidence you can feel.</h1>
+      <p>Clear options, considered pacing and preventive care built around the person—not just the appointment.</p>
+      <div class="actions"><button class="primary" data-dialog-open="booking">Explore appointment times</button><a href="#treatments">See treatments <span aria-hidden="true">↓</span></a></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="practice-strip" aria-label="Practical visit information">
+      <article><span>Today</span><strong>08:00–19:00</strong><small>Illustrative opening hours</small></article>
+      <article><span>First visit</span><strong>About 60 minutes</strong><small>Time for questions and a plan</small></article>
+      <article><span>Need help sooner?</span><strong>Urgent requests reviewed</strong><small>This demo does not provide clinical triage</small></article>
+      <button class="primary" data-dialog-open="booking">Request a visit</button>
+    </section>
+    <section class="intro" id="treatments">
+      <div><p class="eyebrow">How we can help</p><h2>Modern care, without the clinical coldness.</h2></div>
+      <p>From preventive checks to restorative planning, each service starts with a plain-language conversation.</p>
+    </section>
+    <section class="treatment-grid" aria-label="Treatments">
+      <article><span>01</span><h3>Everyday care</h3><p>Check-ups, hygiene visits and practical prevention plans.</p><a href="#faq">What to expect</a></article>
+      <article><span>02</span><h3>Restore</h3><p>Conservative treatment options presented with clear trade-offs.</p><a href="#faq">Explore options</a></article>
+      <article><span>03</span><h3>Smile design</h3><p>Subtle, individually planned cosmetic care with no pressure.</p><a href="#faq">Our approach</a></article>
+    </section>
+
+    <section class="first-visit" id="first-visit">
+      <header><p class="eyebrow">Your first visit</p><h2>Know what happens next.</h2><p>A confident decision starts with a predictable process—not a surprise treatment plan.</p></header>
+      <ol>
+        <li><span>01</span><div><h3>Tell us what matters</h3><p>We start with your concern, preferences, past experiences and any access adjustments.</p></div></li>
+        <li><span>02</span><div><h3>Understand the picture</h3><p>Your clinician explains findings in plain language and checks that the options make sense.</p></div></li>
+        <li><span>03</span><div><h3>Choose the next step</h3><p>You receive a written plan, indicative costs and time to decide without pressure.</p></div></li>
+      </ol>
+      <button class="primary" data-dialog-open="booking">Start the appointment demo</button>
+    </section>
+
+    <section class="team" id="team">
+      <div class="team-copy"><p class="eyebrow">Meet the studio</p><h2>A team that listens before it treats.</h2><p>Appointments are paced for questions, access needs and genuine shared decisions.</p></div>
+      <div class="profiles">
+        <article><div class="avatar" aria-hidden="true">AR</div><h3>Dr Amara Rao</h3><p>Restorative dentistry · 14 years</p></article>
+        <article><div class="avatar" aria-hidden="true">JM</div><h3>Dr Jules Martin</h3><p>Preventive & family care · 11 years</p></article>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div><p class="eyebrow">Before your visit</p><h2>Questions are welcome.</h2></div>
+      <div>
+        <details><summary>Is this a real dental clinic?</summary><p>No. Vela is a fictional portfolio concept. No appointment or personal information is transmitted.</p></details>
+        <details><summary>How would insurance support work?</summary><p>A real implementation could explain accepted plans, estimates and claim support without guaranteeing coverage.</p></details>
+        <details><summary>Will I see costs before treatment?</summary><p>Yes in the fictional service model: options and indicative costs would be provided in writing before treatment begins.</p></details>
+        <details><summary>What if I have an urgent dental concern?</summary><p>This portfolio demo cannot assess symptoms. A production clinic site should make its urgent contact route and emergency limitations immediately clear.</p></details>
+        <details><summary>Can I request accessibility adjustments?</summary><p>The production flow would invite access requests before a visit and confirm them directly with the practice.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#top"><span>V</span> Vela Dental</a><p>Fictional business concept. No clinical advice or services are offered.</p><a href="https://mykolams.com/">View Mykola M's portfolio</a></footer>
+
+  <dialog id="booking" aria-labelledby="booking-title">
+    <form class="booking" data-mock-form>
+      <button type="button" class="close" data-dialog-close aria-label="Close appointment demo">×</button>
+      <ol class="booking-progress" aria-label="Appointment steps"><li aria-current="step">1. Need</li><li>2. Preference</li><li>3. Done</li></ol>
+      <section data-booking-step="1"><p class="eyebrow">Appointment simulation</p><h2 id="booking-title">What would you like help with?</h2>
+        <fieldset><legend class="sr-only">Appointment type</legend><label><input type="radio" name="visit" value="check" required /> Routine check</label><label><input type="radio" name="visit" value="concern" /> New concern</label><label><input type="radio" name="visit" value="cosmetic" /> Cosmetic consultation</label></fieldset>
+        <p class="privacy">For severe or rapidly worsening symptoms, contact an appropriate local healthcare service. This demo does not triage.</p>
+        <button class="primary booking-next" type="button" data-booking-next>Continue</button>
+      </section>
+      <section data-booking-step="2" hidden><p class="eyebrow">Your preferences</p><h2>Choose a useful starting point.</h2>
+        <label>Preferred day<select name="preferred-day" required><option value="">Choose a day</option><option>Tuesday 10:30</option><option>Wednesday 14:00</option><option>Friday 09:15</option></select></label>
+        <label>Visit support<select required><option value="">Choose one</option><option>No adjustment needed</option><option>Step-free access information</option><option>More time to discuss options</option><option>Communication support</option></select></label>
+        <p class="privacy">Demo only. Do not enter personal information; nothing is sent or stored.</p>
+        <div class="booking-actions"><button type="button" data-booking-back>Back</button><button class="primary" type="submit">Complete simulation</button></div><p class="demo-status" data-form-status aria-live="polite"></p>
+      </section>
+      <section data-booking-step="3" hidden class="booking-complete"><p class="eyebrow">Simulation complete</p><h2>Your preference is ready for review.</h2><strong data-booking-summary></strong><p>No appointment was created and nothing was sent or stored.</p><button class="primary" type="button" data-dialog-close>Close demo</button></section>
+    </form>
+  </dialog>
+</body>
+</html>
+

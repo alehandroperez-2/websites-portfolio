@@ -1,0 +1,8 @@
+.menu-list article:not([hidden]) { animation: menu-row-arrive .35s cubic-bezier(.2,.7,.2,1) both; }
+.dish-carousel__viewport { scroll-behavior: auto; }
+.filters button:hover,
+.filters button:focus-visible { transform: translateY(-2px); }
+.dish-card > span { transition: transform .32s ease; }
+@media (hover:hover) and (pointer:fine) { .dish-card:hover > span { transform: translateY(-3px); } }
+@keyframes menu-row-arrive { from { opacity: .3; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .menu-list article:not([hidden]) { animation: none; } .filters button,.dish-card > span { transition: none; transform: none; } }

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Forge & Field Command Center, a fictional construction company website concept by Mykola M.">
+  <link rel="icon" href="data:,">
+  <title>Forge & Field Command Center — Fictional Construction Concept</title>
+  <script type="module" src="/main.js"></script>
+</head>
+<body>
+  <div class="concept-banner" data-concept-banner>Portfolio concept <a href="https://mykolams.com/#portfolio">by Mykola M</a></div>
+  <header class="command-hero" id="top" tabindex="0" aria-roledescription="carousel" aria-label="Featured fictional construction projects">
+    <div class="hero-media" aria-hidden="true">
+      <picture class="hero-slide is-active" data-slide data-title="Harbour Foundry" data-location="Liverpool waterfront" data-progress="62" data-sector="Adaptive reuse">
+        <source type="image/avif" srcset="/media/site-night-768.avif 768w, /media/site-night-1920.avif 1920w" sizes="100vw">
+        <source type="image/webp" srcset="/media/site-night-768.webp 768w, /media/site-night-1920.webp 1920w" sizes="100vw">
+        <img src="/media/site-night-1920.webp" alt="" fetchpriority="high">
+      </picture>
+      <picture class="hero-slide" data-slide data-title="North Yard Commons" data-location="Bristol, UK" data-progress="84" data-sector="Mass timber">
+        <source type="image/avif" srcset="/media/timber-atrium-768.avif 768w, /media/timber-atrium-1920.avif 1920w" sizes="100vw">
+        <source type="image/webp" srcset="/media/timber-atrium-768.webp 768w, /media/timber-atrium-1920.webp 1920w" sizes="100vw">
+        <img src="/media/timber-atrium-1920.webp" alt="" loading="lazy">
+      </picture>
+      <picture class="hero-slide" data-slide data-title="Riverworks Exchange" data-location="Leeds, UK" data-progress="100" data-sector="Heritage">
+        <source type="image/avif" srcset="/media/adaptive-reuse-768.avif 768w, /media/adaptive-reuse-1920.avif 1920w" sizes="100vw">
+        <source type="image/webp" srcset="/media/adaptive-reuse-768.webp 768w, /media/adaptive-reuse-1920.webp 1920w" sizes="100vw">
+        <img src="/media/adaptive-reuse-1920.webp" alt="" loading="lazy">
+      </picture>
+    </div>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a class="brand" href="#top"><span>F</span> FORGE &amp; FIELD</a>
+      <div class="nav-links"><a href="#projects">Projects</a><a href="#services">Services</a><a href="#approach">Approach</a></div>
+      <button class="outline-button" type="button" data-dialog-open="brief-dialog">Start a brief</button>
+    </nav>
+    <div class="hero-copy">
+      <p class="eyebrow">Complex projects · Clearer outcomes</p>
+      <h1>Build with<br>certainty.</h1>
+      <p>Construction expertise made visible from first decision to final handover.</p>
+      <button class="primary-button" type="button" data-dialog-open="brief-dialog">Start a fictional brief <span aria-hidden="true">→</span></button>
+      <div class="headline-metrics" aria-label="Fictional company statistics"><span><b>250+</b> projects delivered</span><span><b>98%</b> on time</span><span><b>0.41</b> demo safety rate</span></div>
+    </div>
+    <aside class="command-panel" aria-label="Fictional project status">
+      <div class="panel-kicker"><span><i></i> Project command</span><small>Simulated data</small></div>
+      <div class="panel-project"><span id="status-sector">Adaptive reuse</span><h2 id="status-title">Harbour Foundry</h2><p id="status-location">Liverpool waterfront</p></div>
+      <div class="progress-block"><strong id="status-progress">62%</strong><span>fictional completion</span><div><i id="status-bar" style="width:62%"></i></div></div>
+      <dl class="panel-grid"><div><dt>Schedule</dt><dd>● On track</dd></div><div><dt>Safety</dt><dd>247 days</dd></div><div><dt>Workforce</dt><dd>312 on site</dd></div><div><dt>Reporting</dt><dd>Weekly</dd></div></dl>
+      <a href="#projects">View selected work <span aria-hidden="true">→</span></a>
+    </aside>
+    <div class="slide-controls" aria-label="Slideshow controls">
+      <button type="button" data-slide-prev aria-label="Previous project">←</button>
+      <span><b id="slide-current">01</b> / 03</span>
+      <button type="button" data-slide-next aria-label="Next project">→</button>
+      <button type="button" data-slide-pause aria-pressed="false">Pause</button>
+    </div>
+    <p class="sr-only" aria-live="polite" id="slide-announcement">Showing Harbour Foundry</p>
+  </header>
+
+  <main>
+    <section class="projects-section" id="projects">
+      <header class="section-heading"><div><p class="eyebrow">Selected work / 2026</p><h2>Built for what is next.</h2></div><p>Explore fictional projects across the places where work, care and community meet.</p></header>
+      <div class="project-filters" role="tablist" aria-label="Filter projects">
+        <button role="tab" aria-selected="true" data-project-filter="all">All projects</button>
+        <button role="tab" aria-selected="false" data-project-filter="civic">Civic</button>
+        <button role="tab" aria-selected="false" data-project-filter="workplace">Workplace</button>
+        <button role="tab" aria-selected="false" data-project-filter="reuse">Adaptive reuse</button>
+      </div>
+      <div class="project-grid">
+        <article data-project="reuse"><picture><source type="image/avif" srcset="/media/adaptive-reuse-768.avif"><img src="/media/adaptive-reuse-768.webp" alt="Historic brick factory transformed with a glass entrance" loading="lazy"></picture><div><p>01 / Adaptive reuse</p><h3>Riverworks Exchange</h3><span>Heritage structure · Public culture</span></div></article>
+        <article data-project="workplace"><picture><source type="image/avif" srcset="/media/timber-atrium-768.avif"><img src="/media/timber-atrium-768.webp" alt="Mass timber workplace with a glazed atrium" loading="lazy"></picture><div><p>02 / Workplace</p><h3>North Yard Commons</h3><span>Mass timber · 14,600 m²</span></div></article>
+        <article data-project="civic"><picture><source type="image/avif" srcset="/media/site-night-768.avif"><img src="/media/site-night-768.webp" alt="Waterfront construction project illuminated at night" loading="lazy"></picture><div><p>03 / Civic</p><h3>Harbour Foundry</h3><span>Waterfront district · In progress</span></div></article>
+      </div>
+    </section>
+
+    <section class="approach-section" id="approach">
+      <p class="eyebrow">One shared view</p>
+      <h2>Decisions stay visible.</h2>
+      <div class="approach-grid"><article><b>01</b><h3>Plan the risk</h3><p>Sequence, access and cost questions are surfaced before the site gets expensive.</p></article><article><b>02</b><h3>Report the truth</h3><p>Clear weekly reporting keeps the programme understandable to every stakeholder.</p></article><article><b>03</b><h3>Close with care</h3><p>Commissioning, documentation and handover are treated as part of the build.</p></article></div>
+    </section>
+
+    <section class="services-section" id="services"><div><p class="eyebrow">Capabilities</p><h2>From first feasibility to final fit out.</h2></div><ul><li><span>01</span> Preconstruction and planning</li><li><span>02</span> Construction management</li><li><span>03</span> Adaptive reuse</li><li><span>04</span> Fit out and handover</li></ul></section>
+  </main>
+
+  <footer><strong>FORGE &amp; FIELD</strong><span>Portfolio concept by Mykola M</span><a href="https://mykolams.com/#portfolio">Back to Mykola M portfolio</a></footer>
+
+  <dialog id="brief-dialog"><form class="brief-dialog" data-mock-form><button class="dialog-close" type="button" data-dialog-close aria-label="Close">×</button><p class="eyebrow">Fictional enquiry</p><h2>Start a project brief.</h2><label>Project type<select required><option value="">Choose one</option><option>Adaptive reuse</option><option>Commercial</option><option>Civic</option></select></label><label>Approximate floor area<input type="number" min="100" required placeholder="e.g. 4500"></label><label>What matters most?<textarea required rows="4" placeholder="Programme, access, sustainability or another priority"></textarea></label><button class="primary-button" type="submit">Complete demo brief</button><p class="demo-status" data-form-status>This simulation sends and stores nothing.</p></form></dialog>
+</body>
+</html>

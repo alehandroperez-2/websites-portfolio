@@ -1,0 +1,18 @@
+.booking-bar input,.booking-bar select { min-height: 2.25rem; border-radius: .25rem; }
+.booking-bar select { color-scheme: dark; background-color: #172421; color: #fff; padding-inline: .55rem; }
+.booking-bar select option { background: #172421; color: #fff; }
+.booking-bar input[type="date"] { padding-inline: .55rem; }
+.room-grid article { transition: transform .3s ease, border-color .3s ease, background-color .3s ease, box-shadow .3s ease; }
+.room-grid article:hover { transform: translateY(-5px); border-color: #d9c9ae80; }
+.room-grid article.is-selected { border-color: var(--sand); background: #d9c9ae12; box-shadow: inset 0 0 0 1px #d9c9ae45; }
+.compare { display: grid; gap: .8rem; }
+.compare > span { font-weight: 600; }
+.compare-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; }
+.compare-grid article { display: grid; gap: .2rem; padding: 1rem; border: 1px solid #19312c45; background: #f2eee566; }
+.compare-grid b { font: 500 1.35rem Georgia, serif; }
+.compare-grid span { font-size: .82rem; font-weight: 650; }
+.compare-grid em { margin-top: .35rem; font-style: normal; }
+.gallery > div { transition: transform .35s ease, filter .35s ease; }
+.gallery > div:hover { transform: scale(.985); filter: brightness(1.08); }
+@media (max-width: 600px) { .compare-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .room-grid article:hover,.gallery > div:hover { transform: none; } }

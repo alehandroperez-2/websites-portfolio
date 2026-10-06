@@ -1,0 +1,34 @@
+.product-grid [data-product] { transition: transform .32s ease, opacity .28s ease; }
+.campaign-slide.is-active img { animation: campaign-drift 6.5s cubic-bezier(.2,.55,.25,1) both; }
+.campaign-slide:nth-child(even).is-active img { animation-name: campaign-drift-reverse; }
+.quick-shop { min-width: 0; }
+.quick-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.quick-grid article,.quick-grid picture { min-width: 0; }
+.quick-grid picture { height: auto; min-height: 170px; aspect-ratio: 4 / 3; padding: .7rem; }
+.quick-grid img { width: 100%; height: 100%; min-width: 0; min-height: 0; max-width: 100%; object-fit: scale-down; object-position: center; }
+.product-art img { transition: transform .45s cubic-bezier(.2,.7,.2,1), filter .35s ease; }
+.add.is-added,
+.quick-add.is-added { animation: added-confirmation .42s cubic-bezier(.2,.7,.2,1); background: #111; color: #fff; }
+.filters button { transition: color .22s ease, border-color .22s ease, transform .22s ease; }
+.filters button:hover,
+.filters button:focus-visible { transform: translateY(-2px); }
+@media (hover:hover) and (pointer:fine) {
+  .product-grid [data-product]:hover { transform: translateY(-5px); }
+  .product-grid [data-product]:hover .product-art img { transform: scale(1.025) rotate(-.5deg); }
+}
+@keyframes added-confirmation { 45% { transform: scale(.985); box-shadow: 0 0 0 5px rgb(201 255 72 / .22); } }
+@keyframes campaign-drift { from { transform: scale(1.035) translate3d(-.6%, -.4%, 0); } to { transform: scale(1.005) translate3d(.7%, .35%, 0); } }
+@keyframes campaign-drift-reverse { from { transform: scale(1.035) translate3d(.6%, -.35%, 0); } to { transform: scale(1.005) translate3d(-.7%, .4%, 0); } }
+@media (max-width: 650px) {
+  .quick-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .quick-grid article { flex: 0 0 min(76vw, 270px); scroll-snap-align: start; }
+  .quick-grid picture { min-height: 190px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .campaign-slide.is-active img { animation: none; }
+  .product-grid [data-product],
+  .product-art img,
+  .filters button { transition: none; transform: none; }
+  .add.is-added,
+  .quick-add.is-added { animation: none; }
+}

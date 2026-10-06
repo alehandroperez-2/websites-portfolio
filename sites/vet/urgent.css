@@ -1,0 +1,47 @@
+.urgent {
+  grid-template-columns: auto minmax(0, 1fr) minmax(300px, .75fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border-radius: 1.6rem;
+  background: #2b352f;
+  color: #fff;
+}
+.urgent h2 { margin: .35rem 0 .8rem; }
+.urgent p { max-width: 42rem; margin: 0; line-height: 1.55; color: #ece5da; }
+.urgent-contact {
+  display: grid;
+  gap: .8rem;
+  padding: 1.4rem;
+  border: 1px solid #ffffff38;
+  border-radius: 1rem;
+  background: #ffffff0d;
+}
+.urgent-contact span {
+  color: #f3c3ad;
+  font-size: .72rem;
+  font-weight: 900;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+.urgent-contact a {
+  display: block;
+  padding: 1rem;
+  border-radius: .65rem;
+  background: var(--rust);
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 900;
+}
+.urgent-contact small { color: #d9d2c8; line-height: 1.45; }
+@media (max-width: 850px) {
+  .urgent { grid-template-columns: auto 1fr; }
+  .urgent-contact { grid-column: 1 / -1; }
+}
+@media (max-width: 560px) {
+  .urgent { grid-template-columns: 1fr; }
+  .urgent-mark { width: 4rem; }
+  .urgent-contact { grid-column: auto; }
+}

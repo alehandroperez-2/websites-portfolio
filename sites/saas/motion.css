@@ -1,0 +1,23 @@
+.orb { will-change: transform, opacity; }
+.hero > section { max-width: 980px; }
+.orb { filter: blur(82px); mix-blend-mode: screen; }
+.orb.one { width: 560px; height: 560px; right: 7%; top: 5%; }
+.orb.two { width: 460px; height: 460px; left: 24%; bottom: -12%; }
+.tour-nav button { transition: color .22s ease, transform .22s ease; }
+.tour-nav button:hover,
+.tour-nav button:focus-visible { transform: translateX(4px); }
+.mini-map i { animation: signal-pulse 3.4s ease-in-out infinite; }
+.mini-map i:nth-child(2) { animation-delay: -.8s; }
+.mini-map i:nth-child(3) { animation-delay: -1.6s; }
+.mini-map i:nth-child(4) { animation-delay: -2.4s; }
+.integration-grid span { transition: transform .28s ease, background-color .28s ease, border-color .28s ease; }
+@media (hover:hover) and (pointer:fine) {
+  .integration-grid span:hover { transform: translateY(-4px); background: white; border-color: #8667ff; }
+}
+@keyframes signal-pulse { 50% { box-shadow: 0 0 26px var(--lime); opacity: .72; } }
+@media (prefers-reduced-motion: reduce) {
+  .orb { will-change: auto; }
+  .mini-map i { animation: none; }
+  .tour-nav button,
+  .integration-grid span { transition: none; transform: none; }
+}

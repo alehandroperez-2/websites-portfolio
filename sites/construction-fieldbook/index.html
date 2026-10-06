@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Forge & Field Field Book, a fictional architectural construction website concept by Mykola M.">
+  <link rel="icon" href="data:,">
+  <title>Forge & Field Field Book — Fictional Construction Concept</title>
+  <script type="module" src="/main.js"></script>
+</head>
+<body>
+  <div class="concept-banner" data-concept-banner>Portfolio concept <a href="https://mykolams.com/#portfolio">by Mykola M</a></div>
+  <div class="field-layout">
+    <aside class="rail">
+      <a class="field-logo" href="#top">FORGE<br>&amp; FIELD</a>
+      <p>People<br>Places<br>A stronger<br>tomorrow</p>
+      <nav aria-label="Primary navigation"><a class="is-current" href="#top">Home</a><a href="#projects">Projects</a><a href="#approach">Approach</a><a href="#estimate">Estimate</a></nav>
+      <span>Built for<br>what lasts</span>
+    </aside>
+    <div class="field-content">
+      <header class="field-hero" id="top">
+        <div class="coordinates">45.5152° N&nbsp;&nbsp; 122.6784° W</div>
+        <div class="hero-title"><p>Site / people / place / possibility</p><h1>Structure.<br>Craft.<br>Legacy.</h1><div class="hero-actions"><a class="blue-button" href="#projects">Explore projects →</a><a class="paper-button" href="#estimate">Request an estimate →</a></div></div>
+        <figure class="hero-building"><picture><source type="image/avif" srcset="/media/civic-concrete-768.avif 768w, /media/civic-concrete-1920.avif 1920w" sizes="(max-width: 800px) 100vw, 65vw"><source type="image/webp" srcset="/media/civic-concrete-768.webp 768w, /media/civic-concrete-1920.webp 1920w" sizes="(max-width: 800px) 100vw, 65vw"><img src="/media/civic-concrete-1920.webp" alt="Monumental concrete civic building beside a mountain landscape"></picture><figcaption>Riverdale Civic Centre · Fictional project</figcaption></figure>
+        <p class="blue-note">More than buildings.<br>A brighter civic life.</p>
+      </header>
+
+      <main>
+        <section class="field-projects" id="projects">
+          <header><div><p class="section-code">FIELD NOTES 024</p><h2>Drawn from real constraints.</h2></div><div class="field-filters" role="tablist" aria-label="Filter fictional projects"><button role="tab" aria-selected="true" data-field-filter="all">All</button><button role="tab" aria-selected="false" data-field-filter="reuse">Adaptive reuse</button><button role="tab" aria-selected="false" data-field-filter="civic">Civic</button><button role="tab" aria-selected="false" data-field-filter="workplace">Workplace</button></div></header>
+          <div class="field-cards">
+            <article data-field-project="reuse"><picture><source type="image/avif" srcset="/media/adaptive-reuse-768.avif"><img src="/media/adaptive-reuse-768.webp" alt="Adapted brick mill with contemporary glass entrance" loading="lazy"></picture><small>01 / Adaptive reuse</small><h3>The Millworks</h3><p>Old structure. New public purpose.</p></article>
+            <article data-field-project="civic"><picture><source type="image/avif" srcset="/media/civic-concrete-768.avif"><img src="/media/civic-concrete-768.webp" alt="Concrete civic centre with deep colonnade" loading="lazy"></picture><small>02 / Civic</small><h3>Riverdale Centre</h3><p>Community rooms around a shared court.</p></article>
+            <article data-field-project="workplace"><picture><source type="image/avif" srcset="/media/timber-atrium-768.avif"><img src="/media/timber-atrium-768.webp" alt="Timber workplace opening onto a public terrace" loading="lazy"></picture><small>03 / Workplace</small><h3>Maple Yard</h3><p>Low carbon structure. Long working life.</p></article>
+          </div>
+        </section>
+
+        <section class="comparison" id="approach">
+          <div class="comparison-copy"><p class="section-code">FIELD STUDY / 17</p><h2>Same bones.<br>More useful life.</h2><p>The comparison control demonstrates how a clear case study can make design and construction decisions tangible.</p><ul><li>Retained masonry shell</li><li>New accessible entrance</li><li>Lower embodied carbon</li></ul></div>
+          <div class="before-after" aria-label="Before and after concept comparison">
+            <picture class="before-image"><source type="image/avif" srcset="/media/adaptive-reuse-1920.avif"><img src="/media/adaptive-reuse-1920.webp" alt="Concept before view of the millworks"></picture>
+            <picture class="after-image"><source type="image/avif" srcset="/media/adaptive-reuse-1920.avif"><img src="/media/adaptive-reuse-1920.webp" alt="Concept after view of the adapted millworks"></picture>
+            <span class="before-label">Before</span><span class="after-label">After</span>
+            <label><span class="sr-only">Compare before and after</span><input id="compare-range" type="range" min="8" max="92" value="56"></label>
+          </div>
+        </section>
+
+        <section class="materials"><div><p class="section-code">MATERIAL REGISTER</p><h2>Details build trust.</h2></div><div class="material-list"><article><b>Concrete</b><span>C30 / 37</span><p>Board formed, locally batched</p></article><article><b>Steel</b><span>S355</span><p>High recycled content</p></article><article><b>Timber</b><span>GL28c</span><p>FSC certified glulam</p></article></div></section>
+
+        <section class="estimate" id="estimate"><div><p class="section-code">EARLY RANGE EXPLORER</p><h2>Put scale around the first conversation.</h2><p>This fictional calculator illustrates an early range only. It is not a quotation.</p></div><form id="calculator" data-mock-form><label>Project type<select id="type" required><option value="">Choose one</option><option value="2100">Adaptive reuse</option><option value="2450">Civic</option><option value="1850">Workplace</option></select></label><label>Floor area <output id="area-output" for="area">4000</output> m²<input id="area" type="range" min="500" max="15000" step="250" value="4000"></label><label>Complexity<select id="complexity" required><option value="">Choose one</option><option value="0.9">Straightforward</option><option value="1.1">Detailed</option><option value="1.3">Complex</option></select></label><div class="estimate-result"><span>Illustrative construction range</span><strong id="result">Select project details</strong></div><button class="blue-button" type="submit">Complete estimate demo</button><p class="demo-status" data-form-status>Nothing is sent or stored.</p></form></section>
+      </main>
+      <footer><strong>FORGE &amp; FIELD / FIELD BOOK</strong><span>Portfolio concept by Mykola M</span><a href="https://mykolams.com/#portfolio">Back to Mykola M portfolio</a></footer>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+.hero { background-position: 64% center; }
+.route-buttons button { transition: transform .24s ease, background-color .24s ease, color .24s ease; }
+.route-buttons button:hover,
+.route-buttons button:focus-visible { transform: translateY(-2px); }
+.route-result { transition: opacity .32s ease, transform .38s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease; }
+.route-result:not(.is-updating) { box-shadow: 0 18px 45px rgb(20 39 33 / .07); }
+.availability i { animation: calm-status 2.8s ease-in-out infinite; }
+.care-paths article,
+.team-cards article { transition: transform .32s ease, border-color .32s ease, box-shadow .32s ease; }
+@media (hover:hover) and (pointer:fine) {
+  .care-paths article:hover,
+  .team-cards article:hover { transform: translateY(-5px); box-shadow: 0 16px 35px rgb(39 51 44 / .12); }
+}
+@keyframes calm-status { 50% { box-shadow: 0 0 0 7px rgb(86 169 138 / .12); } }
+@media (prefers-reduced-motion: reduce) {
+  .availability i { animation: none; }
+  .route-buttons button,
+  .route-result,
+  .care-paths article,
+  .team-cards article { transition: none; transform: none; }
+}

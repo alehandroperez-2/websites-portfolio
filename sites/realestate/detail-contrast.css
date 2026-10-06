@@ -1,0 +1,13 @@
+.detail { color: #fff; }
+.detail .close { color: #fff !important; }
+.detail > .eyebrow { color: #e0a17e; }
+.detail dl div {
+  background: #f1ede4;
+  color: #1c211f;
+}
+.detail dt { color: #4c5d55; font-weight: 800; }
+.detail dd { color: #1c211f; }
+.detail > button:last-child {
+  background: #193631;
+  color: #fff;
+}

@@ -1,0 +1,25 @@
+.metrics article,
+.driver-row,
+.workspace > article,
+.workspace > section {
+  transition: transform .28s ease, border-color .28s ease, background-color .28s ease;
+}
+.app-content.analysis-complete .metrics article { animation: metric-arrive .42s cubic-bezier(.2,.7,.2,1) both; }
+.app-content.analysis-complete .metrics article:nth-child(2) { animation-delay: .05s; }
+.app-content.analysis-complete .metrics article:nth-child(3) { animation-delay: .1s; }
+.app-content.analysis-complete .trend { stroke-dasharray: 760; animation: trace-line .65s ease-out both; }
+.app-content.analysis-complete .driver-row { animation: driver-arrive .35s ease-out both; }
+.app-content.analysis-complete .driver-row:nth-child(2) { animation-delay: .04s; }
+.app-content.analysis-complete .driver-row:nth-child(3) { animation-delay: .08s; }
+.bars i { transform-origin: bottom; transition: height .38s cubic-bezier(.2,.7,.2,1), filter .22s ease; }
+.use-tabs button:hover,
+.use-tabs button:focus-visible { transform: translateY(-2px); }
+@keyframes metric-arrive { from { opacity: .35; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes trace-line { from { stroke-dashoffset: 760; } to { stroke-dashoffset: 0; } }
+@keyframes driver-arrive { from { opacity: .25; transform: translateX(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .app-content.analysis-complete .metrics article,
+  .app-content.analysis-complete .trend,
+  .app-content.analysis-complete .driver-row { animation: none; }
+  .bars i { transition: none; }
+}

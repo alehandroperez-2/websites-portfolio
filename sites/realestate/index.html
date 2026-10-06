@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Atria Estates, a fictional real estate portfolio concept by Mykola M.">
+<link rel="icon" href="data:">
+<title>Atria Estates | Fictional Property Concept</title>
+<script type="module" src="/main.js">
+</script>
+</head>
+<body>
+<div class="concept-banner" data-concept-banner>Portfolio concept <a href="https://mykolams.com/#portfolio">by Mykola M</a>
+</div>
+<header class="hero" id="top">
+<nav>
+<a class="logo" href="#top">A<span>TRIA</span>
+</a>
+<div>
+<a href="#lens">Neighbourhoods</a>
+<a href="#listings">Properties</a>
+<a href="#method">Approach</a>
+</div>
+<button id="saved-top">Saved <span>0</span>
+</button>
+</nav>
+<section>
+<p>Considered homes &middot; connected places</p>
+<h1>Find the space<br>that <i>fits your life.</i>
+</h1>
+</section>
+<form class="search" id="search-form" data-local-form>
+<label>Area<select id="area">
+<option value="all">Any area</option>
+<option value="riverside">Riverside</option>
+<option value="central">Central</option>
+<option value="garden">Garden quarter</option>
+</select>
+</label>
+<label>Bedrooms<select id="beds">
+<option value="0">Any</option>
+<option value="1">1+</option>
+<option value="2">2+</option>
+<option value="3">3+</option>
+</select>
+</label>
+<label>Budget<select id="budget">
+<option value="9999">Any budget</option>
+<option value="600">Up to 600k</option>
+<option value="800">Up to 800k</option>
+<option value="1000">Up to 1m</option>
+</select>
+</label>
+<button type="submit">Show homes</button>
+<p id="filter-status" class="sr-only" aria-live="polite">Local browser filter. Nothing is sent or stored.</p>
+</form>
+</header>
+<main>
+<section class="lens" id="lens" aria-labelledby="lens-title">
+<header>
+<div>
+<p class="eyebrow">Neighbourhood lens</p>
+<h2 id="lens-title">Compare the life around the address.</h2>
+</div>
+<p>Illustrative context helps buyers ask better questions. Save any number of homes; the first two saved appear here for a direct comparison.</p>
+</header>
+<div class="lens-board">
+<div class="map" aria-label="Interactive illustrative map of three fictional neighbourhoods">
+<div class="map-toolbar" aria-label="Map controls"><button type="button" data-map-zoom="in" aria-label="Zoom map in">+</button><button type="button" data-map-zoom="out" aria-label="Zoom map out">−</button><button type="button" data-map-reset>Reset</button></div>
+<div class="map-canvas" role="img" aria-label="Illustrative map of Garden quarter, Central, and Riverside">
+<span class="river">
+</span>
+<button class="pin pin-one" data-map-area="garden" aria-label="Show Garden quarter context">G</button>
+<button class="pin pin-two" data-map-area="central" aria-label="Show Central context">C</button>
+<button class="pin pin-three" data-map-area="riverside" aria-label="Show Riverside context">R</button>
+<div class="map-copy">
+<small>Illustrative map</small>
+<strong id="neighbourhood-name">Garden quarter</strong>
+<p id="neighbourhood-copy">Leafy streets, local markets and a calmer evening rhythm, with the centre still within easy reach.</p>
+</div>
+</div>
+ </div>
+<button type="button" class="map-resizer" role="separator" aria-label="Resize map and comparison panels" aria-orientation="vertical" aria-valuemin="35" aria-valuemax="70" aria-valuenow="50"><span aria-hidden="true"></span></button>
+<section class="compare">
+<header>
+<div>
+<small>Saved comparison</small>
+<strong>First two selected homes</strong>
+</div>
+<span id="compare-count">0 saved</span>
+</header>
+<div id="compare-grid" aria-live="polite">
+<p class="empty">Save two properties to compare their space, costs, access and neighbourhood context.</p>
+</div>
+</section>
+</div>
+</section>
+<section class="listing-section" id="listings">
+<header>
+<div>
+<p class="eyebrow">Curated collection</p>
+<h2>Homes worth<br>looking closer at.</h2>
+</div>
+<p id="result-count" aria-live="polite">Showing 6 fictional properties</p>
+</header>
+<div class="listings">
+<article data-name="Alder Courtyard" data-area="garden" data-beds="2" data-price="680" data-size="91 m2" data-costs="Estimated 285 monthly" data-access="Step free entrance and lift" data-lifestyle="Quiet courtyard, market nearby">
+<div class="property p1" data-motion-media><picture><source type="image/avif" srcset="/media/alder-courtyard.avif"><img src="/media/alder-courtyard.webp" alt="Alder Courtyard garden entrance" loading="lazy"></picture>
+<button type="button" class="save" aria-label="Save Alder Courtyard" aria-pressed="false">&#9825;</button>
+<span>Garden quarter</span>
+</div>
+<h3>Alder Courtyard</h3>
+<p>2 bed &middot; 2 bath &middot; 91 m2</p>
+<strong>680,000</strong>
+<button type="button" class="view" data-property-detail>View details</button>
+</article>
+<article data-name="Riverfold Loft" data-area="riverside" data-beds="1" data-price="520" data-size="64 m2" data-costs="Estimated 230 monthly" data-access="Lift access, one internal step" data-lifestyle="Waterside path, active weekend setting">
+<div class="property p2" data-motion-media><picture><source type="image/avif" srcset="/media/riverfold-loft.avif"><img src="/media/riverfold-loft.webp" alt="Riverfold Loft interior overlooking the water" loading="lazy"></picture>
+<button type="button" class="save" aria-label="Save Riverfold Loft" aria-pressed="false">&#9825;</button>
+<span>Riverside</span>
+</div>
+<h3>Riverfold Loft</h3>
+<p>1 bed &middot; 1 bath &middot; 64 m2</p>
+<strong>520,000</strong>
+<button type="button" class="view" data-property-detail>View details</button>
+</article>
+<article data-name="Foundry House" data-area="central" data-beds="3" data-price="940" data-size="126 m2" data-costs="Estimated 360 monthly" data-access="Level entrance and wide circulation" data-lifestyle="Cultural venues and rapid connections">
+<div class="property p3" data-motion-media><picture><source type="image/avif" srcset="/media/foundry-house.avif"><img src="/media/foundry-house.webp" alt="Foundry House city exterior" loading="lazy"></picture>
+<button type="button" class="save" aria-label="Save Foundry House" aria-pressed="false">&#9825;</button>
+<span>Central</span>
+</div>
+<h3>Foundry House</h3>
+<p>3 bed &middot; 2 bath &middot; 126 m2</p>
+<strong>940,000</strong>
+<button type="button" class="view" data-property-detail>View details</button>
+</article>
+<article data-name="Lime Mews" data-area="garden" data-beds="3" data-price="790" data-size="112 m2" data-costs="Estimated 310 monthly" data-access="Two entrance steps, bedrooms upstairs" data-lifestyle="Pocket parks and independent shops">
+<div class="property p4" data-motion-media><picture><source type="image/avif" srcset="/media/lime-mews.avif"><img src="/media/lime-mews.webp" alt="Lime Mews on a leafy pedestrian lane" loading="lazy"></picture>
+<button type="button" class="save" aria-label="Save Lime Mews" aria-pressed="false">&#9825;</button>
+<span>Garden quarter</span>
+</div>
+<h3>Lime Mews</h3>
+<p>3 bed &middot; 2 bath &middot; 112 m2</p>
+<strong>790,000</strong>
+<button type="button" class="view" data-property-detail>View details</button>
+</article>
+<article data-name="Studio Twelve" data-area="central" data-beds="2" data-price="740" data-size="82 m2" data-costs="Estimated 275 monthly" data-access="Lift access throughout" data-lifestyle="Workday convenience and late dining">
+<div class="property p5" data-motion-media><picture><source type="image/avif" srcset="/media/studio-twelve.avif"><img src="/media/studio-twelve.webp" alt="Studio Twelve apartment interior" loading="lazy"></picture>
+<button type="button" class="save" aria-label="Save Studio Twelve" aria-pressed="false">&#9825;</button>
+<span>Central</span>
+</div>
+<h3>Studio Twelve</h3>
+<p>2 bed &middot; 1 bath &middot; 82 m2</p>
+<strong>740,000</strong>
+<button type="button" class="view" data-property-detail>View details</button>
+</article>
+<article data-name="Tide House" data-area="riverside" data-beds="2" data-price="610" data-size="88 m2" data-costs="Estimated 260 monthly" data-access="Level entrance, adaptable bathroom" data-lifestyle="Morning walks and waterfront cafes">
+<div class="property p6" data-motion-media><picture><source type="image/avif" srcset="/media/tide-house.avif"><img src="/media/tide-house.webp" alt="Tide House beside the water" loading="lazy"></picture>
+<button type="button" class="save" aria-label="Save Tide House" aria-pressed="false">&#9825;</button>
+<span>Riverside</span>
+</div>
+<h3>Tide House</h3>
+<p>2 bed &middot; 2 bath &middot; 88 m2</p>
+<strong>610,000</strong>
+<button type="button" class="view" data-property-detail>View details</button>
+</article>
+</div>
+<p class="no-results" id="no-results" hidden>No fictional properties match those filters. Broaden an area, bedroom or budget choice.</p>
+</section>
+<section class="method" id="method">
+<p class="eyebrow">The Atria approach</p>
+<h2>Fewer listings.<br>Better questions.</h2>
+<div>
+<article>
+<b>01</b>
+<h3>Listen first</h3>
+<p>Priorities, trade offs and daily routines shape the shortlist.</p>
+</article>
+<article>
+<b>02</b>
+<h3>Show the whole picture</h3>
+<p>Clear property context, costs and known constraints.</p>
+</article>
+<article>
+<b>03</b>
+<h3>Move at your pace</h3>
+<p>Useful follow up without artificial pressure.</p>
+</article>
+</div>
+</section>
+</main>
+<footer id="contact">
+<a class="logo" href="#top">ATRIA</a>
+<p>All listings, neighbourhoods, addresses and prices are fictional.</p>
+<a href="https://mykolams.com/#portfolio">Mykola M portfolio</a>
+</footer>
+<dialog id="property-detail" aria-labelledby="detail-title">
+<div class="detail">
+<button type="button" data-dialog-close class="close" aria-label="Close">&times;</button>
+<p class="eyebrow" id="detail-area">Neighbourhood</p>
+<h2 id="detail-title">Property</h2>
+<p id="detail-summary">
+</p>
+<dl>
+<div>
+<dt>Illustrative running costs</dt>
+<dd id="detail-costs">
+</dd>
+</div>
+<div>
+<dt>Accessibility</dt>
+<dd id="detail-access">
+</dd>
+</div>
+<div>
+<dt>Lifestyle context</dt>
+<dd id="detail-lifestyle">
+</dd>
+</div>
+</dl>
+<p>All information is fictional and would require independent verification in a real property journey.</p>
+<button type="button" data-dialog-open="inquiry" data-dialog-close>Ask about this home</button>
+</div>
+</dialog>
+<dialog id="inquiry" aria-labelledby="inquiry-title">
+<form class="inquiry" data-mock-form>
+<button type="button" data-dialog-close class="close" aria-label="Close">&times;</button>
+<p class="eyebrow">Inquiry simulation</p>
+<h2 id="inquiry-title">Ask about this home.</h2>
+<label>Topic<select required>
+<option value="">Choose one</option>
+<option>Viewing availability</option>
+<option>Running costs</option>
+<option>Accessibility information</option>
+</select>
+</label>
+<label>Preferred response format<select required>
+<option value="">Choose one</option>
+<option>Email</option>
+<option>Phone</option>
+<option>Video call</option>
+</select>
+</label>
+<p>No contact details are requested; nothing is transmitted or stored.</p>
+<button type="submit">Complete simulation</button>
+<p data-form-status class="demo-status" aria-live="polite">
+</p>
+</form>
+</dialog>
+</body>
+</html>

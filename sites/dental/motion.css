@@ -1,0 +1,17 @@
+.hero-content a { position: relative; }
+.hero-content a::after { content: ''; position: absolute; left: 0; right: 0; bottom: -.3rem; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: left; transition: transform .28s ease; }
+.hero-content a:hover::after,
+.hero-content a:focus-visible::after { transform: scaleX(1); }
+.first-visit li,
+.profiles article { transition: transform .3s ease, background-color .3s ease, box-shadow .3s ease; }
+.booking-progress li { transition: color .24s ease, border-color .24s ease; }
+@media (hover:hover) and (pointer:fine) {
+  .first-visit li:hover,
+  .profiles article:hover { transform: translateY(-4px); box-shadow: 0 15px 34px rgb(23 52 52 / .09); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-content a::after,
+  .first-visit li,
+  .profiles article,
+  .booking-progress li { transition: none; transform: none; }
+}

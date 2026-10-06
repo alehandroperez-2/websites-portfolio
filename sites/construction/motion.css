@@ -1,0 +1,11 @@
+.command-panel.status-updated .panel-project,
+.command-panel.status-updated .progress-block { animation: status-arrive .42s cubic-bezier(.2,.7,.2,1) both; }
+.command-panel.status-updated .progress-block { animation-delay: .06s; }
+.panel-grid div,
+.project-filters button { transition: transform .28s ease, border-color .28s ease, background-color .28s ease; }
+@media (hover:hover) and (pointer:fine) {
+  .panel-grid div:hover { transform: translateY(-3px); border-color: #f0b02780; }
+  .project-filters button:hover { transform: translateY(-2px); }
+}
+@keyframes status-arrive { from { opacity: .35; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .command-panel.status-updated .panel-project,.command-panel.status-updated .progress-block{animation:none}.panel-grid div,.project-filters button{transition:none;transform:none} }

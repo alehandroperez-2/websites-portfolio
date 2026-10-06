@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Metricline Analytics — fictional decision analytics platform concept by Mykola M.">
+  <link rel="icon" href="data:,">
+  <title>Metricline Decision Room — Fictional Analytics Product</title>
+  <script type="module" src="/main.js"></script>
+</head>
+<body>
+  <div class="concept-banner" data-concept-banner>Portfolio concept <a href="https://mykolams.com/#portfolio">by Mykola M</a></div>
+  <header id="top" class="decision-hero">
+    <nav>
+      <a class="logo" href="#top"><span>M</span>metricline <small>/ 02</small></a>
+      <div><a href="#dashboard">Decision room</a><a href="#usecases">Use cases</a><a href="#plans">Governance</a></div>
+      <button data-dialog-open="sandbox">Open sample</button>
+    </nav>
+    <div class="hero-grid">
+      <section class="hero-copy">
+        <p class="eyebrow">Decision intelligence for operating teams</p>
+        <h1>Ask better questions. <i>Act on the signal.</i></h1>
+        <p>Move beyond dashboard decoration. Connect a change, its likely drivers, the supporting evidence and the next accountable action.</p>
+        <div class="question-box" aria-label="Sample analytics question">
+          <span>ASK</span>
+          <label class="sr-only" for="hero-question">Choose a sample question</label>
+          <select id="hero-question">
+            <option value="retention">Why did enterprise retention fall?</option>
+            <option value="growth">What is driving qualified pipeline?</option>
+            <option value="delivery">Where is delivery slowing down?</option>
+          </select>
+          <button type="button" id="analyse-question">Analyse <span aria-hidden="true">→</span></button>
+        </div>
+        <p class="question-status" id="question-status" aria-live="polite">Choose a sample question to update the illustrative workspace.</p>
+      </section>
+      <section class="decision-app" aria-label="Illustrative decision workspace">
+        <header class="appbar"><b id="review-title">Retention review / September</b><span>ILLUSTRATIVE DATA · LOCAL DEMO</span></header>
+        <div class="app-content">
+          <div class="metrics">
+            <article><small id="primary-label">Net retention</small><strong id="primary-value">91.4%</strong><em id="primary-change">↓ 3.8 points</em></article>
+            <article><small id="risk-label">At risk revenue</small><strong id="risk-value">£184k</strong><em id="risk-note">24 accounts</em></article>
+            <article><small>Decision confidence</small><strong id="confidence-value">87%</strong><em id="confidence-note">6 sources aligned</em></article>
+          </div>
+          <div class="decision-grid">
+            <article class="chart-card">
+              <header><b id="chart-title">Retention and expected range</b><span>12 weeks · Enterprise</span></header>
+              <svg viewBox="0 0 560 210" role="img" aria-labelledby="chart-accessible-title">
+                <title id="chart-accessible-title">Illustrative retention trend with an anomaly point</title>
+                <defs><linearGradient id="area-fill" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#246bf2" stop-opacity=".3"/><stop offset="1" stop-color="#246bf2" stop-opacity="0"/></linearGradient></defs>
+                <path class="gridline" d="M0 35H560M0 95H560M0 155H560"/>
+                <path id="chart-area" class="area" d="M0 62 C70 48 96 65 145 58 S235 80 285 84 S365 104 410 130 S500 125 560 150 L560 205 L0 205Z"/>
+                <path id="chart-line" class="trend" d="M0 62 C70 48 96 65 145 58 S235 80 285 84 S365 104 410 130 S500 125 560 150"/>
+                <circle id="chart-point" class="point" cx="410" cy="130" r="7"/>
+              </svg>
+            </article>
+            <aside class="driver-card">
+              <header><b>Likely drivers</b><span id="explained-value">EXPLAINED 78%</span></header>
+              <p>Ranked contributors to the movement.</p>
+              <div id="driver-list"></div>
+              <div class="next-question"><b>Suggested next question</b><span id="next-question">Which onboarding stage predicts churn?</span></div>
+            </aside>
+            <footer class="decision-log"><div aria-hidden="true">✓</div><p><b>Decision trail</b><br><span id="decision-copy">Owner assigned to review onboarding handoff for the 24 affected accounts.</span></p><button type="button" id="evidence-button" aria-expanded="false">Open evidence</button></footer>
+            <div id="evidence-panel" class="evidence-panel" hidden><b>Illustrative evidence</b><span id="evidence-copy">Onboarding duration, feature adoption and support response were compared across fictional account cohorts.</span></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <section class="dashboard" id="dashboard">
+      <header><div><p class="eyebrow">Interactive sample</p><h2>Follow the question.</h2></div><div class="use-tabs" role="tablist" aria-label="Choose a decision view"><button data-tab="growth" role="tab" aria-selected="false">Growth</button><button data-tab="retention" role="tab" aria-selected="true">Retention</button><button data-tab="delivery" role="tab" aria-selected="false">Delivery</button></div></header>
+      <div class="workspace">
+        <aside aria-label="Workspace sections"><a class="active" href="#dashboard">Overview</a><a href="#dashboard">Drivers</a><a href="#dashboard">Segments</a><a href="#dashboard">Decision log</a></aside>
+        <article><header><div><span id="metric-label">90 day retention</span><strong id="metric-value">88.6%</strong></div><p id="metric-note">Activation depth is improving in collaborative workspaces.</p></header><div class="bars" aria-label="Illustrative weekly metric chart"><i style="--h:72%"></i><i style="--h:78%"></i><i style="--h:74%"></i><i style="--h:67%"></i><i style="--h:62%"></i><i style="--h:55%"></i><i style="--h:58%"></i><i style="--h:49%"></i></div><footer><span>W1</span><span>W2</span><span>W3</span><span>W4</span><span>W5</span><span>W6</span><span>W7</span><span>W8</span></footer></article>
+        <section><p>WHAT CHANGED</p><strong id="movement">−3.8</strong><span>points vs prior period</span><hr><p>LIKELY DRIVER</p><b id="driver">Longer onboarding handoff</b><span id="model-note">Illustrative confidence: 87%</span></section>
+      </div>
+    </section>
+    <section class="usecases" id="usecases"><p class="eyebrow">From signal to accountable action</p><h2>Not another wall of charts.</h2><div><article><b>01</b><h3>Investigate</h3><p>Start from a business question and trace the change through relevant segments and evidence.</p></article><article><b>02</b><h3>Decide</h3><p>Put confidence, context and uncertainty next to the metric rather than hiding them in another report.</p></article><article><b>03</b><h3>Follow through</h3><p>Record the next action and owner so analysis becomes part of an operating rhythm.</p></article></div></section>
+    <section class="plans" id="plans"><header><p class="eyebrow">Illustrative governance</p><h2>Trust the route to the number.</h2></header><div class="plan-table" role="table" aria-label="Illustrative analytics governance comparison"><div role="row"><b role="columnheader">Capability</b><b role="columnheader">Focus</b><b role="columnheader">Scale</b></div><div role="row"><span>Decision workspaces</span><span>3</span><span>Unlimited</span></div><div role="row"><span>Source lineage</span><span>Core</span><span>Advanced</span></div><div role="row"><span>Decision notes</span><span>Included</span><span>Included</span></div><div role="row"><span>Model governance</span><span>Standard</span><span>Advanced</span></div></div><p>Concept presentation only. No real data, prices or commercial offer.</p></section>
+  </main>
+  <footer><a class="logo" href="#top"><span>M</span>metricline</a><p>Fictional analytics platform. No data is processed.</p><a href="https://mykolams.com/#portfolio">Mykola M portfolio</a></footer>
+  <dialog id="sandbox" aria-labelledby="sandbox-title"><form class="modal" data-mock-form><button type="button" class="close" data-dialog-close aria-label="Close">×</button><p class="eyebrow">Sample workspace</p><h2 id="sandbox-title">Choose a decision.</h2><label>Area<select required><option value="">Choose one</option><option>Revenue planning</option><option>Retention analysis</option><option>Delivery performance</option></select></label><label>Perspective<select required><option value="">Choose one</option><option>Executive summary</option><option>Analyst detail</option><option>Team action view</option></select></label><p>Simulation only. No company or personal data is requested or sent.</p><button type="submit">Create sample view</button><p class="demo-status" data-form-status aria-live="polite"></p></form></dialog>
+</body>
+</html>
