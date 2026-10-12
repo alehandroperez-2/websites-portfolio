@@ -55,7 +55,27 @@ async function validateReference(file, rawReference) {
 if (!await exists(resolve(root, 'index.html'))) failures.push('Missing root index.html');
 if (!await exists(resolve(root, '.nojekyll'))) failures.push('Missing .nojekyll');
 
+for (const asset of [
+  'favicon.ico',
+  'favicon.svg',
+  'favicon-32.png',
+  'favicon-512.png',
+  'apple-touch-icon.png',
+  'og-image.png',
+  'site.webmanifest',
+]) {
+  if (!await exists(resolve(root, asset))) failures.push(`Missing root preview asset ${asset}`);
+}
+
 const landing = await readFile(resolve(root, 'index.html'), 'utf8');
+for (const requiredMetadata of [
+  'rel="apple-touch-icon"',
+  'rel="manifest"',
+  'property="og:image"',
+  'name="twitter:image"',
+]) {
+  if (!landing.includes(requiredMetadata)) failures.push(`Landing page is missing metadata ${requiredMetadata}`);
+}
 for (const site of sites) {
   if (!await exists(resolve(root, site, 'index.html'))) failures.push(`Missing ${site}/index.html`);
   if (!landing.includes(`href="./${site}/"`)) failures.push(`Landing page is missing ${site}`);

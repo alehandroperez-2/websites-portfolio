@@ -42,6 +42,7 @@
     "test:browser:edge": "set BROWSER=edge&& wdio run ./wdio.conf.js",
     "test:browser": "npm run test:browser:chrome && npm run test:browser:edge",
     "capture:portfolio-current": "wdio run ./wdio.conf.js --spec ./tests/portfolio-current.e2e.js",
+    "generate:portfolio-icons": "node scripts/generate-portfolio-icons.mjs",
     "verify:redesign": "npm run check && npm run test:browser"
   },
   "devDependencies": {
