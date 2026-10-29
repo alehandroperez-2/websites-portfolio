@@ -68,6 +68,28 @@ for (const asset of [
 }
 
 const landing = await readFile(resolve(root, 'index.html'), 'utf8');
+const publicBase = 'https://alehandroperez-2.github.io/websites-portfolio/';
+const sitemap = await readFile(resolve(root, 'sitemap.xml'), 'utf8');
+for (const site of ['', ...sites]) {
+  const html = await readFile(resolve(root, site, 'index.html'), 'utf8');
+  const url = `${publicBase}${site ? `${site}/` : ''}`;
+  if (!html.includes(`<link rel="canonical" href="${url}">`)) failures.push(`Incorrect canonical for ${site || 'index'}`);
+  if (!html.includes(`<meta property="og:url" content="${url}">`)) failures.push(`Incorrect social URL for ${site || 'index'}`);
+  if (!html.includes('name="twitter:card" content="summary_large_image"')) failures.push(`Missing social card for ${site || 'index'}`);
+  if (!sitemap.includes(`<loc>${url}</loc>`)) failures.push(`Sitemap missing ${url}`);
+  try {
+    const json = html.match(/<script id="portfolio-seo" type="application\/ld\+json">([\s\S]*?)<\/script>/)?.[1];
+    const graph = JSON.parse(json)['@graph'];
+    const page = graph.find((node) => ['WebPage', 'CollectionPage'].includes(node['@type']));
+    if (page?.url !== url || page.creator?.['@id'] !== 'https://mykolams.com/#person') failures.push(`Incorrect creator/page schema for ${site || 'index'}`);
+    if (graph.some((node) => !['Person', 'WebPage', 'CollectionPage'].includes(node['@type']))) failures.push(`Unexpected entity type for ${site || 'index'}`);
+    if (!site && page?.mainEntity?.itemListElement?.length !== sites.length) failures.push('Portfolio collection must list all concepts');
+    if (site && !/fictional/i.test(page.name + page.description)) failures.push(`${site}: schema must identify the fictional concept`);
+  } catch (error) {
+    failures.push(`${site || 'index'}: invalid or missing SEO structured data: ${error.message}`);
+  }
+}
+if (!landing.includes('href="https://mykolams.com/#contact"')) failures.push('Portfolio enquiry link missing');
 for (const requiredMetadata of [
   'rel="apple-touch-icon"',
   'rel="manifest"',

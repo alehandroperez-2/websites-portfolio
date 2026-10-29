@@ -1,5 +1,6 @@
 import { access, cp, mkdir, rm, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { writeSeoMetadata } from './seo-metadata.mjs';
 
 const root = resolve(import.meta.dirname, '..');
 const output = resolve(root, 'pages-dist');
@@ -28,5 +29,6 @@ for (const site of sites) {
 
 await cp(resolve(root, 'pages'), output, { recursive: true });
 await writeFile(resolve(output, '.nojekyll'), '');
+await writeSeoMetadata(output, sites);
 
 console.log(`GitHub Pages artifact assembled at ${output}`);
